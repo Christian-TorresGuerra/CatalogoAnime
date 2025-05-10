@@ -279,22 +279,22 @@
     padding: 1px;
     border-top: 15px solid #333; 
   }
-
-#titulo-galeria {
-  text-align: center;
-  color: #fff; 
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
-  background-color: #222; 
-  padding: 10px 0; 
-  border-radius: 8px; 
-  font-family: 'bouncy', sans-serif ; 
-}
-
-
+  .contenedor-titulo {
+    text-align: center;
+  }
+  
+  #titulo-galeria {
+    display: inline-block;
+    padding: 20px 30px;
+    background-color: #222;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 20px;
+    font-family: 'Bouncy', sans-serif;
+    margin-bottom: 20px;
+  }
+  
 .galeria {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
