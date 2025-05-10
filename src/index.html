@@ -1,13 +1,781 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>ExamenTraspasoAngular</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
 <body>
   <app-root></app-root>
 </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Películas Clásicas</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .categoria {
+      display: none;
+    }
+  </style>
+</head>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const links = document.querySelectorAll("nav a");
+
+    links.forEach(link => {
+      link.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        // Quitar clase 'activo' de todos los enlaces
+        links.forEach(l => l.classList.remove("activo"));
+        // Agregar clase 'activo' al enlace clicado
+        this.classList.add("activo");
+
+        const id = this.getAttribute("href").substring(1);
+
+        // Ocultar todas las categorías
+        document.querySelectorAll(".categoria").forEach(cat => cat.classList.remove("activa"));
+
+        // Mostrar la categoría seleccionada
+        const categoriaActiva = document.getElementById(id);
+        if (categoriaActiva) {
+          categoriaActiva.classList.add("activa");
+        }
+      });
+    });
+  });
+</script>
+
+<body>
+  <header>
+    <h1>🎬 Películas del Anime 🎬</h1>
+    <p>Un recorrido por mis peliculas favoritas del Anime</p>
+    <nav>
+      <ul class="navbar">
+        <li><a href="#series">Series</a></li>
+        <li><a href="#peliculas">Peliculas</a></li>
+        <li><a href="#accion">Acción</a></li>
+        <li><a href="#aventura">Aventura</a></li>
+        <li><a href="#romance">Romance</a></li>
+        <li><a href="#fantasia">Fantasía</a></li>
+        <li><a href="#ciencia-ficcion">Ciencia Ficción</a></li>
+      </ul>
+    </nav>    
+  </header>
+ 
+  <section id="series" class="categoria">
+    <div class="pelicula">
+      <img src="assets/images/Katainaka-no-Ossan.jpg" alt="Katainaka no Ossan, Kensei ni Naru">
+      <h2>'Katainaka no Ossan, Kensei ni Naru', de Shigeru Sagazaki (2025)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/yami healer.jpg" alt="Yami Healer">
+      <h2>'Yami Healer', de Sakaku Hishikawa (2025)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/sakamoto.jpg" alt="Sakamoto Days">
+      <h2>'Sakamoto Days', de Yuto Suzuki (2025)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/around 40.jpg" alt="Around 40 Otoko no Isekai Tsuuhan">
+      <h2>'Around 40 Otoko no Isekai Tsuuhan', de Yuto Suzuki (2025)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/solo leveling.jpg" alt="Solo Leveling">
+      <h2>'Ore dake Level Up na Ken', de 	Chugong (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/solo leveling 2.jpg" alt="Solo Leveling II">
+      <h2>'Ore dake Level Up na Ken Season 2: Arise from the Shadow', de Chugong (2025)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/dandadan.jpg" alt="Dandadan">
+      <h2>'Dandadan', de 	Yukinobu Tatsu (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Rekishi ni Nokoru Akujo ni Naru zo.jpg" alt="Rekishi ni Nokoru Akujo ni Naru zo">
+      <h2>'Rekishi ni Nokoru Akujo ni Naru zo', de 	Izumi Okido (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Ore wa Subete.jpg" alt="Ore wa Subete wo Parry suru: Gyaku Kanchigai no Sekai Saikyou wa Boukensha ni Naritai">
+      <h2>'Ore wa Subete wo "Parry" suru: Gyaku Kanchigai no Sekai Saikyou wa Boukensha ni Naritai', de Nabeshiki (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Saikyou no Shienshoku.jpg" alt="Saikyou no Shienshoku Wajutsushi de Aru Ore wa Sekai Saikyou Clan wo Shitagaeru">
+      <h2>'Saikyou no Shienshoku "Wajutsushi" de Aru Ore wa Sekai Saikyou Clan wo Shitagaeru', de Jaki (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Shinmai Ossan Boukensha, Saikyou Party ni Shinu hodo Kitaerarete Muteki ni Naru..jpg" alt="Shinmai Ossan Boukensha, Saikyou Party ni Shinu hodo Kitaerarete Muteki ni Naru.">
+      <h2>'Shinmai Ossan Boukensha, Saikyou Party ni Shinu hodo Kitaerarete Muteki ni Naru.', de 	Kiraku Kishima (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Tensei shitara Dainana Ouji Datta node, Kimama ni Majutsu wo Kiwamemasu.jpg" alt="Tensei shitara Dainana Ouji Datta node, Kimama ni Majutsu wo Kiwamemasu">
+      <h2>'Tensei shitara Dainana Ouji Datta node, Kimama ni Majutsu wo Kiwamemasu', de 	Kenkyo na Circle (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Re_Monster.jpg" alt="Re:Monster">
+      <h2>'Re:Monster', de Kogitsune Kanekiru (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Dungeon Meshi.jpg" alt="Dungeon Meshi">
+      <h2>'Dungeon Meshi', de Ryōko Kui (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Kage no Jitsuryokusha ni Naritakute!.jpg" alt="Kage no Jitsuryokusha ni Naritakute!">
+      <h2>'Kage no Jitsuryokusha ni Naritakute!', de 	Daisuke Aizawa (2022)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Shangri_La Frontier Kusoge Hunter Kamige ni Idoman to su.jpg" alt="Shangri-La Frontier: Kusoge Hunter, Kamige ni Idoman to su">
+      <h2>'Shangri-La Frontier: Kusoge Hunter, Kamige ni Idoman to su', de 	Katarina (2023)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Mushoku Tensei Isekai Ittara Honki Dasu.jpg" alt="Mushoku Tensei: Isekai Ittara Honki Dasu">
+      <h2>'Mushoku Tensei: Isekai Ittara Honki Dasu', de 	Rifujin na Magonote (2021)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Mashle.jpg" alt="Mashle">
+      <h2>'Mashle', de Hajime Kōmoto (2023)</h2>
+    </div>
+  </section>
+
+  <section id="peliculas" class="categoria">
+      <div class="pelicula">
+        <img src="assets/images/My_Hero_Academia_El_despertar_de_los_heroes.jpg" alt="My Hero Academia">
+        <h2>'My Hero Academia: El despertar de los héroes', de Kenji Nagasaki (2019)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/your_name.jpg" alt="Your Name">
+        <h2>'Your name', de Makoto Shinkai (2016)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/silent_voice.jpg" alt="Silent Voice">
+        <h2>'A silent voice', de Naoko Yamada (2016)</h2>
+      </div>
+     
+      <div class="pelicula">
+        <img src="assets/images/La_chica_que_saltaba_atraves_del_tiempo.jpg" alt="La chica que saltaba a traves del tiempo">
+        <h2>'La chica que saltaba a través del tiempo', de Mamoru Hosoda (2006)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/Akira.jpg" alt="Akira">
+        <h2>'Akira', de Katsuhiro Ōtomo (1988) </h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/Overlord.jpg" alt="Overlord">
+        <h2>'Overlord Movie 3: Sei Oukoku-hen', de Madhouse Kadokawa (2024)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/my-hero-academia-movie-3.jpg" alt="My Hero Academia">
+        <h2>'
+          Boku no Hero Academia: World Heroes' Mission', de Kenji Nagasaki (2021)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/Goblin_Slayer_la_corona_de_Goblin-539650793-large.jpg" alt="Goblin Slayer">
+        <h2>'Goblin Slayer: Goblin's Crown', de Takaharu Ozaki (2020)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/Youjo_Senki_s1_poster.webp" alt="Youjo Senki">
+        <h2>'Youjo Senki', de Yutaka Uemura (2019)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/bokunohero1.jpg" alt="My Hero Academia">
+        <h2>'Boku no Hero Academia the Movie: Futari no Hero', de Kenji Nagasaki (2018)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/FireWorks-929306530-large.jpg" alt="Fireworks">
+        <h2>'Uchiage Hanabi, Shita kara Miru ka? Yoko kara Miru ka?', de Nobuyuki Takeuchi, Akiyuki Shinbo (2017)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/OrdinalScale.jpg" alt="Sword Art Online">
+        <h2>'Sword Art Online Movie: Ordinal Scale', de Tomohiko Itōi (2017)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/Kizumonogatari1.jpg" alt="Kizumonogatari I">
+        <h2>'Kizumonogatari I: Tekketsu-hen', de Tatsuya Oishi, Akiyuki Shinbo (2016)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/Kizumonogatari2.jpg" alt="Kizumonogatari II">
+        <h2>'Kizumonogatari II: Nekketsu-hen', de Tatsuya Oishi, Akiyuki Shinbo (2016)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/Kizumonogatari3.jpg" alt="Kizumonogatari III">
+        <h2>'Kizumonogatari III: Reiketsu-hen', de Tatsuya Oishi, Akiyuki Shinbo (2017)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/Kyoujai.jpg" alt="Kyoujai no Kanata">
+        <h2>'Kyoukai no Kanata Movie: I'll Be Here - Kako-hen', de Nagomu Torii (2015)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/NarutoTheLastImagenPelicula.webp" alt="Naruto Shippuuden">
+        <h2>'Naruto: Shippuuden - The Last', de Tsuneo Kobayashi (2014)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/Steins_Gate_the_Movie_Load_Region_of_Daejaa_vu-249969265-large.jpg" alt="Steins Gate">
+        <h2>'Steins;Gate Fuka Ryoiki no Deja vu', de Kanji Wakabayashi (2013)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/El_castillo_ambulante_p3Fs.webp" alt="El castillo Ambulante">
+        <h2>'Howl no Ugoku Shiro', de Hayao Miyazaki (2004)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/batman_ninja.jpg" alt="Batman Ninja">
+        <h2>'Batman ninja', de Junpei Mizusaki (2018)</h2>
+      </div>
+  </section>
+
+  <section id="accion" class="categoria">
+    <div class="pelicula">
+      <img src="assets/images/bokunohero1.jpg" alt="My Hero Academia">
+      <h2>'Boku no Hero Academia the Movie: Futari no Hero', de Kenji Nagasaki (2018)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/My_Hero_Academia_El_despertar_de_los_heroes.jpg" alt="My Hero Academia">
+      <h3>'My Hero Academia: El despertar de los héroes', de Kenji Nagasaki (2019)</h3>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/my-hero-academia-movie-3.jpg" alt="My Hero Academia">
+      <h2>'Boku no Hero Academia: World Heroes' Mission', de Kenji Nagasaki (2021)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Akira.jpg" alt="Akira">
+      <h2>'Akira', de Katsuhiro Ōtomo (1988) </h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Overlord.jpg" alt="Overlord">
+      <h2>'Overlord Movie 3: Sei Oukoku-hen', de Madhouse Kadokawa (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Goblin_Slayer_la_corona_de_Goblin-539650793-large.jpg" alt="Goblin Slayer">
+      <h2>'Goblin Slayer: Goblin's Crown', de Takaharu Ozaki (2020)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Youjo_Senki_s1_poster.webp" alt="Youjo Senki">
+      <h2>'Youjo Senki', de Yutaka Uemura (2019)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/OrdinalScale.jpg" alt="Sword Art Online">
+      <h2>'Sword Art Online Movie: Ordinal Scale', de Tomohiko Itōi (2017)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Kizumonogatari1.jpg" alt="Kizumonogatari I">
+      <h2>'Kizumonogatari I: Tekketsu-hen', de Tatsuya Oishi, Akiyuki Shinbo (2016)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Kizumonogatari2.jpg" alt="Kizumonogatari II">
+      <h2>'Kizumonogatari II: Nekketsu-hen', de Tatsuya Oishi, Akiyuki Shinbo (2016)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Kizumonogatari3.jpg" alt="Kizumonogatari III">
+      <h2>'Kizumonogatari III: Reiketsu-hen', de Tatsuya Oishi, Akiyuki Shinbo (2017)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/NarutoTheLastImagenPelicula.webp" alt="Naruto Shippuuden">
+      <h2>'Naruto: Shippuuden - The Last', de Tsuneo Kobayashi (2014)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/batman_ninja.jpg" alt="Batman Ninja">
+      <h2>'Batman ninja', de Junpei Mizusaki (2018)</h2>
+    </div> 
+    <div class="pelicula">
+      <img src="assets/images/Katainaka-no-Ossan.jpg" alt="Katainaka no Ossan, Kensei ni Naru">
+      <h2>'Katainaka no Ossan, Kensei ni Naru', de Shigeru Sagazaki (2025)</h2>
+    </div> 
+    <div class="pelicula">
+      <img src="assets/images/sakamoto.jpg" alt="Sakamoto Days">
+      <h2>'Sakamoto Days', de Yuto Suzuki (2025)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/solo leveling.jpg" alt="Solo Leveling">
+      <h2>'Ore dake Level Up na Ken', de 	Chugong (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/solo leveling 2.jpg" alt="Solo Leveling II">
+      <h2>'Ore dake Level Up na Ken Season 2: Arise from the Shadow', de Chugong (2025)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/dandadan.jpg" alt="Dandadan">
+      <h2>'Dandadan', de 	Yukinobu Tatsu (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Ore wa Subete.jpg" alt="Ore wa Subete wo Parry suru: Gyaku Kanchigai no Sekai Saikyou wa Boukensha ni Naritai">
+      <h2>'Ore wa Subete wo "Parry" suru: Gyaku Kanchigai no Sekai Saikyou wa Boukensha ni Naritai', de Nabeshiki (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Saikyou no Shienshoku.jpg" alt="Saikyou no Shienshoku Wajutsushi de Aru Ore wa Sekai Saikyou Clan wo Shitagaeru">
+      <h2>'Saikyou no Shienshoku "Wajutsushi" de Aru Ore wa Sekai Saikyou Clan wo Shitagaeru', de Jaki (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Shinmai Ossan Boukensha, Saikyou Party ni Shinu hodo Kitaerarete Muteki ni Naru..jpg" alt="Shinmai Ossan Boukensha, Saikyou Party ni Shinu hodo Kitaerarete Muteki ni Naru.">
+      <h2>'Shinmai Ossan Boukensha, Saikyou Party ni Shinu hodo Kitaerarete Muteki ni Naru.', de 	Kiraku Kishima (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Re_Monster.jpg" alt="Re:Monster">
+      <h2>'Re:Monster', de Kogitsune Kanekiru (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Kage no Jitsuryokusha ni Naritakute!.jpg" alt="Kage no Jitsuryokusha ni Naritakute!">
+      <h2>'Kage no Jitsuryokusha ni Naritakute!', de 	Daisuke Aizawa (2022)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Shangri_La Frontier Kusoge Hunter Kamige ni Idoman to su.jpg" alt="Shangri-La Frontier: Kusoge Hunter, Kamige ni Idoman to su">
+      <h2>'Shangri-La Frontier: Kusoge Hunter, Kamige ni Idoman to su', de 	Katarina (2023)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Mashle.jpg" alt="Mashle">
+      <h2>'Mashle', de Hajime Kōmoto (2023)</h2>
+    </div>
+  </section>
+
+  <section id="aventura" class="categoria">
+    <div class="pelicula">
+      <img src="assets/images/La_chica_que_saltaba_atraves_del_tiempo.jpg" alt="La chica que saltaba a traves del tiempo">
+      <h2>'La chica que saltaba a través del tiempo', de Mamoru Hosoda (2006)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/NarutoTheLastImagenPelicula.webp" alt="Naruto Shippuuden">
+      <h2>'Naruto: Shippuuden - The Last', de Tsuneo Kobayashi (2014)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Steins_Gate_the_Movie_Load_Region_of_Daejaa_vu-249969265-large.jpg" alt="Steins Gate">
+      <h2>'Steins;Gate Fuka Ryoiki no Deja vu', de Kanji Wakabayashi (2013)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/El_castillo_ambulante_p3Fs.webp" alt="El castillo Ambulante">
+      <h2>'Howl no Ugoku Shiro', de Hayao Miyazaki (2004)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Katainaka-no-Ossan.jpg" alt="Katainaka no Ossan, Kensei ni Naru">
+      <h2>'Katainaka no Ossan, Kensei ni Naru', de Shigeru Sagazaki (2025)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/solo leveling.jpg" alt="Solo Leveling">
+      <h2>'Ore dake Level Up na Ken', de 	Chugong (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/solo leveling 2.jpg" alt="Solo Leveling II">
+      <h2>'Ore dake Level Up na Ken Season 2: Arise from the Shadow', de Chugong (2025)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Ore wa Subete.jpg" alt="Ore wa Subete wo Parry suru: Gyaku Kanchigai no Sekai Saikyou wa Boukensha ni Naritai">
+      <h2>'Ore wa Subete wo "Parry" suru: Gyaku Kanchigai no Sekai Saikyou wa Boukensha ni Naritai', de Nabeshiki (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Saikyou no Shienshoku.jpg" alt="Saikyou no Shienshoku Wajutsushi de Aru Ore wa Sekai Saikyou Clan wo Shitagaeru">
+      <h2>'Saikyou no Shienshoku "Wajutsushi" de Aru Ore wa Sekai Saikyou Clan wo Shitagaeru', de Jaki (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Shinmai Ossan Boukensha, Saikyou Party ni Shinu hodo Kitaerarete Muteki ni Naru..jpg" alt="Shinmai Ossan Boukensha, Saikyou Party ni Shinu hodo Kitaerarete Muteki ni Naru.">
+      <h2>'Shinmai Ossan Boukensha, Saikyou Party ni Shinu hodo Kitaerarete Muteki ni Naru.', de 	Kiraku Kishima (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Re_Monster.jpg" alt="Re:Monster">
+      <h2>'Re:Monster', de Kogitsune Kanekiru (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Shangri_La Frontier Kusoge Hunter Kamige ni Idoman to su.jpg" alt="Shangri-La Frontier: Kusoge Hunter, Kamige ni Idoman to su">
+      <h2>'Shangri-La Frontier: Kusoge Hunter, Kamige ni Idoman to su', de 	Katarina (2023)</h2>
+    </div>
+  </section>
+
+  <section id="romance" class="categoria">
+    <div class="pelicula">
+      <img src="assets/images/your_name.jpg" alt="Your Name">
+      <h2>'Your name', de Makoto Shinkai (2016)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/silent_voice.jpg" alt="Silent Voice">
+      <h2>'A silent voice', de Naoko Yamada (2016)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/FireWorks-929306530-large.jpg" alt="Fireworks">
+      <h2>'Uchiage Hanabi, Shita kara Miru ka? Yoko kara Miru ka?', de Nobuyuki Takeuchi, Akiyuki Shinbo (2017)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Kyoujai.jpg" alt="Kyoujai no Kanata">
+      <h2>'Kyoukai no Kanata Movie: I'll Be Here - Kako-hen', de Nagomu Torii (2015)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/NarutoTheLastImagenPelicula.webp" alt="Naruto Shippuuden">
+      <h2>'Naruto: Shippuuden - The Last', de Tsuneo Kobayashi (2014)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/El_castillo_ambulante_p3Fs.webp" alt="El castillo Ambulante">
+      <h2>'Howl no Ugoku Shiro', de Hayao Miyazaki (2004)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Rekishi ni Nokoru Akujo ni Naru zo.jpg" alt="Rekishi ni Nokoru Akujo ni Naru zo">
+      <h2>'Rekishi ni Nokoru Akujo ni Naru zo', de Yuto Suzuki (2024)</h2>
+    </div>
+  </section>
+
+  <section id="fantasia" class="categoria">
+    <div class="pelicula">
+      <img src="assets/images/My_Hero_Academia_El_despertar_de_los_heroes.jpg" alt="My Hero Academia">
+      <h2>'My Hero Academia: El despertar de los héroes', de Kenji Nagasaki (2019)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/your_name.jpg" alt="Your Name">
+      <h2>'Your name', de Makoto Shinkai (2016)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/La_chica_que_saltaba_atraves_del_tiempo.jpg" alt="La chica que saltaba a traves del tiempo">
+      <h2>'La chica que saltaba a través del tiempo', de Mamoru Hosoda (2006)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Akira.jpg" alt="Akira">
+      <h2>'Akira', de Katsuhiro Ōtomo (1988) </h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Overlord.jpg" alt="Overlord">
+      <h2>'Overlord Movie 3: Sei Oukoku-hen', de Madhouse Kadokawa (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Goblin_Slayer_la_corona_de_Goblin-539650793-large.jpg" alt="Goblin Slayer">
+      <h2>'Goblin Slayer: Goblin's Crown', de Takaharu Ozaki (2020)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Youjo_Senki_s1_poster.webp" alt="Youjo Senki">
+      <h2>'Youjo Senki', de Yutaka Uemura (2019)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/bokunohero1.jpg" alt="My Hero Academia">
+      <h2>'Boku no Hero Academia the Movie: Futari no Hero', de Kenji Nagasaki (2018)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/FireWorks-929306530-large.jpg" alt="Fireworks">
+      <h2>'Uchiage Hanabi, Shita kara Miru ka? Yoko kara Miru ka?', de Nobuyuki Takeuchi, Akiyuki Shinbo (2017)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/OrdinalScale.jpg" alt="Sword Art Online">
+      <h2>'Sword Art Online Movie: Ordinal Scale', de Tomohiko Itōi (2017)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Kizumonogatari1.jpg" alt="Kizumonogatari I">
+      <h2>'Kizumonogatari I: Tekketsu-hen', de Tatsuya Oishi, Akiyuki Shinbo (2016)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Kizumonogatari2.jpg" alt="Kizumonogatari II">
+      <h2>'Kizumonogatari II: Nekketsu-hen', de Tatsuya Oishi, Akiyuki Shinbo (2016)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Kizumonogatari3.jpg" alt="Kizumonogatari III">
+      <h2>'Kizumonogatari III: Reiketsu-hen', de Tatsuya Oishi, Akiyuki Shinbo (2017)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Kyoujai.jpg" alt="Kyoujai no Kanata">
+      <h2>'Kyoukai no Kanata Movie: I'll Be Here - Kako-hen', de Nagomu Torii (2015)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/NarutoTheLastImagenPelicula.webp" alt="Naruto Shippuuden">
+      <h2>'Naruto: Shippuuden - The Last', de Tsuneo Kobayashi (2014)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Steins_Gate_the_Movie_Load_Region_of_Daejaa_vu-249969265-large.jpg" alt="Steins Gate">
+      <h2>'Steins;Gate Fuka Ryoiki no Deja vu', de Kanji Wakabayashi (2013)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/El_castillo_ambulante_p3Fs.webp" alt="El castillo Ambulante">
+      <h2>'Howl no Ugoku Shiro', de Hayao Miyazaki (2004)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/batman_ninja.jpg" alt="Batman Ninja">
+      <h2>'Batman ninja', de Junpei Mizusaki (2018)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Katainaka-no-Ossan.jpg" alt="Katainaka no Ossan, Kensei ni Naru">
+      <h2>'Katainaka no Ossan, Kensei ni Naru', de Shigeru Sagazaki (2025)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/yami healer.jpg" alt="Yami Healer">
+      <h2>'Yami Healer', de Sakaku Hishikawa (2025)</h2>
+    </div>
+    <div class="pelicula">
+    <img src="assets/images/around 40.jpg" alt="Around 40 Otoko no Isekai Tsuuhan">
+    <h2>'Around 40 Otoko no Isekai Tsuuhan', de Yuto Suzuki (2025)</h2>
+  </div>
+  <div class="pelicula">
+    <img src="assets/images/solo leveling.jpg" alt="Solo Leveling">
+    <h2>'Ore dake Level Up na Ken', de 	Chugong (2024)</h2>
+  </div>
+  <div class="pelicula">
+    <img src="assets/images/solo leveling 2.jpg" alt="Solo Leveling II">
+    <h2>'Ore dake Level Up na Ken Season 2: Arise from the Shadow', de Chugong (2025)</h2>
+  </div>
+  <div class="pelicula">
+    <img src="assets/images/Rekishi ni Nokoru Akujo ni Naru zo.jpg" alt="Rekishi ni Nokoru Akujo ni Naru zo">
+    <h2>'Rekishi ni Nokoru Akujo ni Naru zo', de Yuto Suzuki (2024)</h2>
+  </div>
+  <div class="pelicula">
+    <img src="assets/images/Ore wa Subete.jpg" alt="Ore wa Subete wo Parry suru: Gyaku Kanchigai no Sekai Saikyou wa Boukensha ni Naritai">
+    <h2>'Ore wa Subete wo "Parry" suru: Gyaku Kanchigai no Sekai Saikyou wa Boukensha ni Naritai', de Nabeshiki (2024)</h2>
+  </div>
+  <div class="pelicula">
+    <img src="assets/images/Saikyou no Shienshoku.jpg" alt="Saikyou no Shienshoku Wajutsushi de Aru Ore wa Sekai Saikyou Clan wo Shitagaeru">
+    <h2>'Saikyou no Shienshoku "Wajutsushi" de Aru Ore wa Sekai Saikyou Clan wo Shitagaeru', de Jaki (2024)</h2>
+  </div>
+  <div class="pelicula">
+    <img src="assets/images/Shinmai Ossan Boukensha, Saikyou Party ni Shinu hodo Kitaerarete Muteki ni Naru..jpg" alt="Shinmai Ossan Boukensha, Saikyou Party ni Shinu hodo Kitaerarete Muteki ni Naru.">
+    <h2>'Shinmai Ossan Boukensha, Saikyou Party ni Shinu hodo Kitaerarete Muteki ni Naru.', de 	Kiraku Kishima (2024)</h2>
+  </div>
+  <div class="pelicula">
+    <img src="assets/images/Re_Monster.jpg" alt="Re:Monster">
+    <h2>'Re:Monster', de Kogitsune Kanekiru (2024)</h2>
+  </div>
+  <div class="pelicula">
+    <img src="assets/images/Dungeon Meshi.jpg" alt="Dungeon Meshi">
+    <h2>'Dungeon Meshi', de Ryōko Kui (2024)</h2>
+  </div>
+  <div class="pelicula">
+    <img src="assets/images/Kage no Jitsuryokusha ni Naritakute!.jpg" alt="Kage no Jitsuryokusha ni Naritakute!">
+    <h2>'Kage no Jitsuryokusha ni Naritakute!', de 	Daisuke Aizawa (2022)</h2>
+  </div>
+  <div class="pelicula">
+    <img src="assets/images/Shangri_La Frontier Kusoge Hunter Kamige ni Idoman to su.jpg" alt="Shangri-La Frontier: Kusoge Hunter, Kamige ni Idoman to su">
+    <h2>'Shangri-La Frontier: Kusoge Hunter, Kamige ni Idoman to su', de 	Katarina (2023)</h2>
+  </div>
+  <div class="pelicula">
+    <img src="assets/images/Mushoku Tensei Isekai Ittara Honki Dasu.jpg" alt="Mushoku Tensei: Isekai Ittara Honki Dasu">
+    <h2>'Mushoku Tensei: Isekai Ittara Honki Dasu', de 	Rifujin na Magonote (2021)</h2>
+  </div>
+  <div class="pelicula">
+    <img src="assets/images/Mashle.jpg" alt="Mashle">
+    <h2>'Mashle', de Hajime Kōmoto (2023)</h2>
+  </div>
+  </section>
+
+  <section id="ciencia-ficcion" class="categoria">
+    <div class="pelicula">
+      <img src="assets/images/Akira.jpg" alt="Akira">
+      <h2>'Akira', de Katsuhiro Ōtomo (1988)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Steins_Gate_the_Movie_Load_Region_of_Daejaa_vu-249969265-large.jpg" alt="Steins Gate">
+      <h2>'Steins;Gate Fuka Ryoiki no Deja vu', de Kanji Wakabayashi (2013)</h2>
+    </div>
+  </section>
+
+  <div class="separador"></div>
+
+  <section class="galeria">
+    <div class="pelicula">
+        <img src="assets/images/My_Hero_Academia_El_despertar_de_los_heroes.jpg" alt="My Hero Academia">
+        <h2>'My Hero Academia: El despertar de los héroes', de Kenji Nagasaki (2019)</h2>
+      </div>
+      <div class="pelicula">
+        <img src="assets/images/your_name.jpg" alt="Your Name">
+        <h2>'Your name', de Makoto Shinkai (2016)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/silent_voice.jpg" alt="Silent Voice">
+        <h2>'A silent voice', de Naoko Yamada (2016)</h2>
+      </div>
+     
+      <div class="pelicula">
+        <img src="assets/images/La_chica_que_saltaba_atraves_del_tiempo.jpg" alt="La chica que saltaba a traves del tiempo">
+        <h2>'La chica que saltaba a través del tiempo', de Mamoru Hosoda (2006)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/Akira.jpg" alt="Akira">
+        <h2>'Akira', de Katsuhiro Ōtomo (1988) </h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/Overlord.jpg" alt="Overlord">
+        <h2>'Overlord Movie 3: Sei Oukoku-hen', de Madhouse Kadokawa (2024)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/my-hero-academia-movie-3.jpg" alt="My Hero Academia">
+        <h2>'
+          Boku no Hero Academia: World Heroes' Mission', de Kenji Nagasaki (2021)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/Goblin_Slayer_la_corona_de_Goblin-539650793-large.jpg" alt="Goblin Slayer">
+        <h2>'Goblin Slayer: Goblin's Crown', de Takaharu Ozaki (2020)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/Youjo_Senki_s1_poster.webp" alt="Youjo Senki">
+        <h2>'Youjo Senki', de Yutaka Uemura (2019)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/bokunohero1.jpg" alt="My Hero Academia">
+        <h2>'Boku no Hero Academia the Movie: Futari no Hero', de Kenji Nagasaki (2018)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/FireWorks-929306530-large.jpg" alt="Fireworks">
+        <h2>'Uchiage Hanabi, Shita kara Miru ka? Yoko kara Miru ka?', de Nobuyuki Takeuchi, Akiyuki Shinbo (2017)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/OrdinalScale.jpg" alt="Sword Art Online">
+        <h2>'Sword Art Online Movie: Ordinal Scale', de Tomohiko Itōi (2017)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/Kizumonogatari1.jpg" alt="Kizumonogatari I">
+        <h2>'Kizumonogatari I: Tekketsu-hen', de Tatsuya Oishi, Akiyuki Shinbo (2016)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/Kizumonogatari2.jpg" alt="Kizumonogatari II">
+        <h2>'Kizumonogatari II: Nekketsu-hen', de Tatsuya Oishi, Akiyuki Shinbo (2016)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/Kizumonogatari3.jpg" alt="Kizumonogatari III">
+        <h2>'Kizumonogatari III: Reiketsu-hen', de Tatsuya Oishi, Akiyuki Shinbo (2017)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/Kyoujai.jpg" alt="Kyoujai no Kanata">
+        <h2>'Kyoukai no Kanata Movie: I'll Be Here - Kako-hen', de Nagomu Torii (2015)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/NarutoTheLastImagenPelicula.webp" alt="Naruto Shippuuden">
+        <h2>'Naruto: Shippuuden - The Last', de Tsuneo Kobayashi (2014)</h2>
+      </div>
+  
+      <div class="pelicula">
+        <img src="assets/images/Steins_Gate_the_Movie_Load_Region_of_Daejaa_vu-249969265-large.jpg" alt="Steins Gate">
+        <h2>'Steins;Gate Fuka Ryoiki no Deja vu', de Kanji Wakabayashi (2013)</h2>
+      </div> 
+      <div class="pelicula">
+        <img src="assets/images/El_castillo_ambulante_p3Fs.webp" alt="El castillo Ambulante">
+        <h2>'Howl no Ugoku Shiro', de Hayao Miyazaki (2004)</h2>
+      </div>
+      <div class="pelicula">
+        <img src="assets/images/batman_ninja.jpg" alt="Batman Ninja">
+        <h2>'Batman ninja', de Junpei Mizusaki (2018)</h2>
+      </div>
+    <div class="pelicula">
+      <img src="assets/images/Katainaka-no-Ossan.jpg" alt="Katainaka no Ossan, Kensei ni Naru">
+      <h2>'Katainaka no Ossan, Kensei ni Naru', de Shigeru Sagazaki (2025)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/yami healer.jpg" alt="Yami Healer">
+      <h2>'Yami Healer', de Sakaku Hishikawa (2025)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/sakamoto.jpg" alt="Sakamoto Days">
+      <h2>'Sakamoto Days', de Yuto Suzuki (2025)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/around 40.jpg" alt="Around 40 Otoko no Isekai Tsuuhan">
+      <h2>'Around 40 Otoko no Isekai Tsuuhan', de Yuto Suzuki (2025)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/solo leveling.jpg" alt="Solo Leveling">
+      <h2>'Ore dake Level Up na Ken', de 	Chugong (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/solo leveling 2.jpg" alt="Solo Leveling II">
+      <h2>'Ore dake Level Up na Ken Season 2: Arise from the Shadow', de Chugong (2025)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/dandadan.jpg" alt="Dandadan">
+      <h2>'Dandadan', de 	Yukinobu Tatsu (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Rekishi ni Nokoru Akujo ni Naru zo.jpg" alt="Rekishi ni Nokoru Akujo ni Naru zo">
+      <h2>'Rekishi ni Nokoru Akujo ni Naru zo', de 	Izumi Okido (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Ore wa Subete.jpg" alt="Ore wa Subete wo Parry suru: Gyaku Kanchigai no Sekai Saikyou wa Boukensha ni Naritai">
+      <h2>'Ore wa Subete wo "Parry" suru: Gyaku Kanchigai no Sekai Saikyou wa Boukensha ni Naritai', de Nabeshiki (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Saikyou no Shienshoku.jpg" alt="Saikyou no Shienshoku Wajutsushi de Aru Ore wa Sekai Saikyou Clan wo Shitagaeru">
+      <h2>'Saikyou no Shienshoku "Wajutsushi" de Aru Ore wa Sekai Saikyou Clan wo Shitagaeru', de Jaki (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Shinmai Ossan Boukensha, Saikyou Party ni Shinu hodo Kitaerarete Muteki ni Naru..jpg" alt="Shinmai Ossan Boukensha, Saikyou Party ni Shinu hodo Kitaerarete Muteki ni Naru.">
+      <h2>'Shinmai Ossan Boukensha, Saikyou Party ni Shinu hodo Kitaerarete Muteki ni Naru.', de 	Kiraku Kishima (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Tensei shitara Dainana Ouji Datta node, Kimama ni Majutsu wo Kiwamemasu.jpg" alt="Tensei shitara Dainana Ouji Datta node, Kimama ni Majutsu wo Kiwamemasu">
+      <h2>'Tensei shitara Dainana Ouji Datta node, Kimama ni Majutsu wo Kiwamemasu', de 	Kenkyo na Circle (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Re_Monster.jpg" alt="Re:Monster">
+      <h2>'Re:Monster', de Kogitsune Kanekiru (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Dungeon Meshi.jpg" alt="Dungeon Meshi">
+      <h2>'Dungeon Meshi', de Ryōko Kui (2024)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Kage no Jitsuryokusha ni Naritakute!.jpg" alt="Kage no Jitsuryokusha ni Naritakute!">
+      <h2>'Kage no Jitsuryokusha ni Naritakute!', de 	Daisuke Aizawa (2022)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Shangri_La Frontier Kusoge Hunter Kamige ni Idoman to su.jpg" alt="Shangri-La Frontier: Kusoge Hunter, Kamige ni Idoman to su">
+      <h2>'Shangri-La Frontier: Kusoge Hunter, Kamige ni Idoman to su', de 	Katarina (2023)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Mushoku Tensei Isekai Ittara Honki Dasu.jpg" alt="Mushoku Tensei: Isekai Ittara Honki Dasu">
+      <h2>'Mushoku Tensei: Isekai Ittara Honki Dasu', de 	Rifujin na Magonote (2021)</h2>
+    </div>
+    <div class="pelicula">
+      <img src="assets/images/Mashle.jpg" alt="Mashle">
+      <h2>'Mashle', de Hajime Kōmoto (2023)</h2>
+    </div>
+  </section>
+
+  <section id="formulario-sugerencia">
+    <h2>¿Quieres sugerir una nueva película?</h2>
+    <form id="form-sugerencia" onsubmit="return validarFormulario(event)">
+      <label for="nombre">Nombre de la película:</label>
+      <input type="text" id="nombre" name="nombre" required>
+  
+      <label for="imagen">URL de la imagen:</label>
+      <input type="url" id="imagen" name="imagen" required>
+  
+      <label for="categoria">Categoría:</label>
+      <input type="text" id="categoria" name="categoria" required>
+  
+      <button type="submit">Enviar sugerencia</button>
+    </form>
+  </section>
+  
+  <script>
+    function validarFormulario(event) {
+      event.preventDefault();
+      const nombre = document.getElementById("nombre").value;
+      const imagen = document.getElementById("imagen").value;
+      const categoria = document.getElementById("categoria").value;
+      if (!nombre || !imagen || !categoria) {
+        alert("Por favor, completa todos los campos antes de enviar.");
+        return false; 
+      }
+      alert("¡Gracias por tu sugerencia! La película ha sido enviada.");
+      return true;
+    }
+  </script>  
+  <footer>
+    <p>© 2025 Mi página personal de películas del Anime</p>
+  </footer>
+</body>
 </html>
+
