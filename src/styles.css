@@ -60,7 +60,7 @@
   .navbar a:hover {
     color: #ffcc00;
   }
-  
+
   .navbar a.activo {
     color: #ffcc00;
     border-bottom: 2px solid #ffcc00;
@@ -117,23 +117,69 @@
     padding: 20px;
   }
 
-#formulario-sugerencia {
-    background-color: #333; /* Fondo oscuro */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  #formulario-sugerencia {
+    background-color: #121212;
+    padding: 30px;
+    border-radius: 10px;
     max-width: 600px;
-    margin: 0 auto;
-    color: #fff; /* Texto blanco */
+    margin: 40px auto 50px;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.1);
   }
   
   #formulario-sugerencia h2 {
     text-align: center;
-    color: #fff;
+    color: #ffa500; /* naranja */
     font-size: 1.8rem;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
   
+  #formulario-sugerencia form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  #formulario-sugerencia label {
+    font-size: 1rem;
+    color: #ccc;
+  }
+  
+  #formulario-sugerencia input {
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  #formulario-sugerencia input:focus {
+    outline: none;
+    border-color: #ffa500;
+    box-shadow: 0 0 5px #ffa50088;
+  }
+  
+  #formulario-sugerencia button {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffa500;
+    color: #000;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #formulario-sugerencia button:hover {
+    background-color: #e69500;
+  }
+  footer {
+    margin-top: 250px; /* Ajusta el valor según lo que necesites */
+  }
+
   form {
     display: flex;
     flex-direction: column;

@@ -745,7 +745,7 @@
 
   <section id="formulario-sugerencia">
     <h2>¿Quieres sugerir una nueva película?</h2>
-    <form id="form-sugerencia">
+    <form id="form-sugerencia" onsubmit="return validarFormulario(event)">
       <label for="nombre">Nombre de la película:</label>
       <input type="text" id="nombre" name="nombre" required>
   
@@ -759,6 +759,20 @@
     </form>
   </section>
   
+  <script>
+    function validarFormulario(event) {
+      event.preventDefault();
+      const nombre = document.getElementById("nombre").value;
+      const imagen = document.getElementById("imagen").value;
+      const categoria = document.getElementById("categoria").value;
+      if (!nombre || !imagen || !categoria) {
+        alert("Por favor, completa todos los campos antes de enviar.");
+        return false; 
+      }
+      alert("¡Gracias por tu sugerencia! La película ha sido enviada.");
+      return true;
+    }
+  </script>  
   <footer>
     <p>© 2025 Mi página personal de películas del Anime</p>
   </footer>
